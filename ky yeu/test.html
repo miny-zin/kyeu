@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Container */
+.timeline {
+  position: relative;
+  width: 600px;
+  margin: 50px auto;
+}
+
+/* Vertical spine */
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: #333;
+  transform: translateX(-50%);
+}
+
+/* Event container */
+.event {
+  position: relative;
+  width: 50%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Left side */
+.event.left {
+  left: 0;
+  text-align: right;
+}
+
+/* Right side */
+.event.right {
+  left: 50%;
+}
+
+/* Branch line (fish bone) */
+.event::before {
+  content: "";
+  position: absolute;
+  top: 30px;
+  width: 40px;
+  height: 2px;
+  background: #333;
+}
+
+/* Connect to spine */
+.event.left::before {
+  right: -40px;
+}
+
+.event.right::before {
+  left: -40px;
+}
+
+/* Event box */
+.content {
+  background: #f4f4f4;
+  padding: 10px 15px;
+  border-radius: 6px;
+  display: inline-block;
+}
+</style>
+</head>
+
+<body>
+
+<div class="timeline">
+
+  <div class="event left">
+    <div class="content">
+      <h4>2020</h4>
+      <p>Project idea started</p>
+    </div>
+  </div>
+
+  <div class="event right">
+    <div class="content">
+      <h4>2021</h4>
+      <p>First prototype built</p>
+    </div>
+  </div>
+
+  <div class="event left">
+    <div class="content">
+      <h4>2023</h4>
+      <p>Public launch</p>
+    </div>
+  </div>
+
+  <div class="event right">
+    <div class="content">
+      <h4>2025</h4>
+      <p>Global expansion</p>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
